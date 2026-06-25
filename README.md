@@ -22,6 +22,12 @@ When a critical node fails, the spacecraft transitions to **SAFE_MODE** automati
 
 ---
 
+## Demo
+
+📹 [Watch the 5-minute walkthrough]([Here](https://drive.google.com/file/d/1XPG4oqPqpGyKKssyiJz66cyUbUYEpUFj/view?usp=sharing))
+
+---
+
 ## Architecture
 
 ```
@@ -172,4 +178,7 @@ timestamp_utc, elapsed_s, fault_type, severity, node_id, arb_id, detail, state
 
 ---
 
-*Built as a portfolio project for spacecraft avionics and embedded firmware roles.*
+## How I Built This With AI
+
+I used Claude as a pair programmer throughout — not to generate code, but to think through engineering decisions before writing anything. We designed the architecture together in Phase 0: I argued thermal was non-critical, Claude challenged that by explaining how thermal failure cascades into battery failure into power loss. That conversation changed the design. For the processing pipeline, I decided the order — checksum before heartbeat, flood detection before validation — and Claude pushed back when my reasoning was wrong. Every line of code I wrote myself; Claude reviewed it, caught bugs like methods defined outside the class and wrong struct format strings, and asked questions that forced me to understand what I was writing, not just copy it. The AI accelerated the build but the engineering decisions were mine.
+---
