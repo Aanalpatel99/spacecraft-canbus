@@ -1,0 +1,19 @@
+spacecraft-canbus/
+│
+├── src/
+│   ├── can_defs.py       # Phase 1 — protocol definitions
+│   ├── nodes.py          # Phase 2 — node simulators
+│   ├── monitor.py        # Phase 3 — health monitor
+│   ├── logger.py         # Phase 4 — CSV + dashboard
+│   └── main.py           # Phase 5 — orchestrator
+│
+├── tests/
+│   └── test_monitor.py   # Phase 6 — unit tests
+│
+├── logs/                 # gitignored — CSV output goes here
+│
+├── assets/
+│   └── architecture.png  # export the Excalidraw diagram
+│
+├── requirements.txt
+└── README.md
