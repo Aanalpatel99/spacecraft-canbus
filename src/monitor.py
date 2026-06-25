@@ -36,6 +36,7 @@ class FaultEvent:
 class HealthMonitor(threading.Thread):
     def __init__(self, bus: can.BusABC, event_queue: deque):
         super().__init__(daemon=True)
+        self._timed_out_nodes = set()
         self.bus = bus
         self.event_queue = event_queue
         self._stop_evt = threading.Event()
@@ -167,7 +168,8 @@ class HealthMonitor(threading.Thread):
             if last == 0.0:
                 continue
             timeout = meta["heartbeat_interval_s"] * meta["timeout_multiplier"]
-            if now - last > timeout:
+            if now - last > timeout and nid not in self._timed_out_nodes:
+                self._timed_out_nodes.add(nid)
                 self._emit_fault(FaultEvent(
                     timestamp  = now,
                     fault_type = FaultType.HEARTBEAT_TIMEOUT,
