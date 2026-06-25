@@ -111,6 +111,7 @@ class HealthMonitor(threading.Thread):
 
         # step 4 — sequence gap
         self._check_sequence(msg, now)
+        
     def _check_sequence(self, msg: can.Message, now: float):
         arb = msg.arbitration_id
         if len(msg.data) < 7:
