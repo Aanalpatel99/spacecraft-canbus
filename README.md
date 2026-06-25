@@ -24,7 +24,7 @@ When a critical node fails, the spacecraft transitions to **SAFE_MODE** automati
 
 ## Demo
 
-📹 [Watch the 5-minute walkthrough]([Here](https://drive.google.com/file/d/1XPG4oqPqpGyKKssyiJz66cyUbUYEpUFj/view?usp=sharing))
+📹 [Watch the 5-minute walkthrough](https://drive.google.com/file/d/1XPG4oqPqpGyKKssyiJz66cyUbUYEpUFj/view?usp=sharing)
 
 ---
 
